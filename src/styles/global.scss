@@ -1,0 +1,26 @@
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap";
+@import "./variables.scss";
+@import "./normalize.scss";
+
+.svelte-widgets {
+  background: #121212;
+  color: $textColor;
+  font-weight: normal;
+  font-size: 16px;
+  font-family: "Lato", serif;
+  height: 100%;
+  width: 100%;
+
+  main {
+    text-align: center;
+    padding: 1em;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    main {
+      max-width: none;
+    }
+  }
+}

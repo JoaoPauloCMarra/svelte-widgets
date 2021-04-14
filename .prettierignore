@@ -1,0 +1,8 @@
+rollup.config.js
+svelte.config.js
+tsconfig.json
+
+node_modules
+.vscode
+.husky
+public

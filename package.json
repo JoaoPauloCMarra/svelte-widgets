@@ -1,0 +1,50 @@
+{
+  "name": "svelte-widgets",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "author": "JoaoPauloCMarra",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "yarn build && sirv public --no-clear",
+    "watch": "sirv public --no-clear --host --dev",
+    "validate": "svelte-check",
+    "lint": "eslint  --fix \"{,!(node_modules|public)/**/}*.{ts,svelte}\"",
+    "format": "prettier --write \"{,!(node_modules|public)/**/}*.{json,js,ts,svelte}\"",
+    "test": "echo 'format coming soon...'",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "@tsconfig/svelte": "^1.0.10",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "autoprefixer": "^10.2.5",
+    "eslint": "^7.24.0",
+    "eslint-plugin-svelte3": "^3.1.2",
+    "husky": "^6.0.0",
+    "node-sass": "^5.0.0",
+    "path": "^0.12.7",
+    "postcss": "^8.2.10",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-scss": "^2.6.1",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "sass": "^1.32.8",
+    "svelte": "^3.0.0",
+    "svelte-check": "^1.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.2.4"
+  }
+}

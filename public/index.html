@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Svelte Widgets Demo</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <meta name="theme-color" content="#fff" />
+    <link rel="stylesheet" href="devices.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background: rgb(10, 10, 10);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .device .device-content {
+        overflow: hidden;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="device device-iphone-x">
+      <div class="device-frame">
+        <div class="device-content">
+          <div id="widget-render-location"></div>
+        </div>
+      </div>
+      <div class="device-stripe"></div>
+      <div class="device-header"></div>
+      <div class="device-sensors"></div>
+      <div class="device-btns"></div>
+      <div class="device-power"></div>
+    </div>
+
+    <script>
+      window.SvelteWidgets = {
+        params: {
+          id: "widget-render-location",
+          widget: "form",
+          token: "demotoken1",
+        },
+      };
+    </script>
+    <script defer src="/loader.js"></script>
+  </body>
+</html>
