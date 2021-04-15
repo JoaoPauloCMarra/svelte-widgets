@@ -13,7 +13,7 @@
   export let language: string;
 
   const store = new Store(token, widget, language);
-  store.setup();
+  void store.setup();
 
   const { loading, errorMsg, clientSettings } = store;
   if (clientSettings) {

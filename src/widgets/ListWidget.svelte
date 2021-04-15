@@ -5,9 +5,9 @@
   type Route = 'list' | 'form';
   let route: Route = 'list';
 
-  const changeRoute = (nextRoute: Route) => {
-    route = nextRoute;
-  };
+  // const changeRoute = (nextRoute: Route) => {
+  //   route = nextRoute;
+  // };
 
   const routes = {
     list: List,
