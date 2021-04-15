@@ -1,28 +1,28 @@
-declare type ID = string | number
-declare type StringObject = { [key: string]: string }
-declare type BooleanObject = { [key: string]: boolean }
-declare type NumberObject = { [key: string]: number }
+declare type ID = string | number;
+declare type StringObject = { [key: string]: string };
+declare type BooleanObject = { [key: string]: boolean };
+declare type NumberObject = { [key: string]: number };
 declare type StringBooleanNumberObject = {
-  [key: string]: string | boolean | number
-}
+  [key: string]: string | boolean | number;
+};
 
-declare type Locales = { [key: string]: string }
+declare type Locales = { [key: string]: string };
 declare type Language = {
-  slug: string
-  label: string
-}
-declare type Languages = { [key: string]: StringObject[] }
+  slug: string;
+  label: string;
+};
+declare type Languages = { [key: string]: StringObject[] };
 
 interface Routes {
-  [key: string]: JSX.Element
+  [key: string]: JSX.Element;
 }
 
 declare type WidgetParams = {
-  id: string
-  token: string
-  widget: string
-  language?: string
-}
+  token: string;
+  widget: string;
+  id?: string;
+  language?: string;
+};
 declare interface Window {
   SvelteWidgets: {
     initiate: (props: WidgetParams) => void;
@@ -30,9 +30,5 @@ declare interface Window {
 }
 
 declare type ClientSettings = {
-  widgetElId: string
-  token: string
-  widget: string
-  language?: string
-  theme?: string
-}
+  theme?: string;
+};

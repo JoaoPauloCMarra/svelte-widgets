@@ -8,8 +8,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "yarn build && sirv public --no-clear",
-    "watch": "sirv public --no-clear --host --dev",
+    "start": "yarn build && sirv public --no-clear -p 3000",
+    "watch": "sirv public --no-clear -H -D -p 3000",
     "validate": "svelte-check",
     "lint": "eslint  --fix \"{,!(node_modules|public)/**/}*.{ts,svelte}\"",
     "format": "prettier --write \"{,!(node_modules|public)/**/}*.{json,js,ts,svelte}\"",
@@ -31,6 +31,7 @@
     "eslint-plugin-svelte3": "^3.1.2",
     "husky": "^6.0.0",
     "node-sass": "^5.0.0",
+    "node-sass-tilde-importer": "^1.0.2",
     "path": "^0.12.7",
     "postcss": "^8.2.10",
     "prettier": "^2.2.1",

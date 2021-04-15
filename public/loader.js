@@ -1,5 +1,5 @@
 !(function (win, doc) {
-  const assetServer = "http://localhost:5000";
+  const assetServer = "http://localhost:3000";
   let clientParams =
     win.SvelteWidgets && win.SvelteWidgets.params
       ? win.SvelteWidgets.params

@@ -12,41 +12,74 @@
     <style>
       html,
       body {
-        height: 100%;
-      }
-      body {
-        background: rgb(10, 10, 10);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .device .device-content {
-        overflow: hidden;
         background: #000;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .card {
+        margin: 20px auto;
+      }
+      .card.phone {
+        height: 568px;
+        width: 320px;
+      }
+      .card.banner {
+        height: 200px;
+        width: 320px;
+      }
+      h1 {
+        color: white;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: bolder;
+        margin-bottom: 5px;
+        text-transform: uppercase;
       }
     </style>
   </head>
   <body>
-    <div class="device device-iphone-x">
-      <div class="device-frame">
-        <div class="device-content">
-          <div id="widget-render-location"></div>
-        </div>
-      </div>
-      <div class="device-stripe"></div>
-      <div class="device-header"></div>
-      <div class="device-sensors"></div>
-      <div class="device-btns"></div>
-      <div class="device-power"></div>
+    <div class="card phone">
+      <h1>List</h1>
+      <div id="widget-list"></div>
     </div>
+    <br /><br />
+    <hr />
+    <br /><br />
+    <div class="card banner">
+      <h1>Form</h1>
+      <div id="widget-form1"></div>
+    </div>
+    <br /><br />
+    <hr />
+    <br /><br />
+    <div class="card banner">
+      <h1>Form</h1>
+      <div id="widget-form2"></div>
+    </div>
+    <br /><br />
+    <hr />
+    <br /><br />
 
     <script>
       window.SvelteWidgets = {
-        params: {
-          id: "widget-render-location",
-          widget: "form",
-          token: "demotoken1",
-        },
+        params: [
+          {
+            id: "widget-list",
+            widget: "list",
+            token: "demotoken1",
+          },
+          {
+            id: "widget-form1",
+            widget: "form",
+            token: "demotoken2",
+          },
+          {
+            id: "widget-form2",
+            widget: "form",
+            token: "demotoken3",
+          }
+        ],
       };
     </script>
     <script defer src="/loader.js"></script>

@@ -4,18 +4,17 @@ import resolve from "@rollup/plugin-node-resolve";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
+import tildeImporter from 'node-sass-tilde-importer';
 import scss from "rollup-plugin-scss";
 import typescript from "@rollup/plugin-typescript";
 
-const preprocessOptions = require("./svelte.config").preprocessOptions;
 const production = !process.env.ROLLUP_WATCH;
 
+let server;
 function toExit() {
   if (server) server.kill(0);
 }
-
 function serve() {
-  let server;
   return {
     writeBundle() {
       if (server) return;
@@ -32,6 +31,22 @@ function serve() {
     },
   };
 }
+
+const preprocessOptions = {
+  sourceMap: true,
+  sass: true,
+  typescript: true,
+  defaults: {
+    script: "typescript",
+    style: "scss",
+  },
+  scss: {
+    prependData: `@import './src/styles/**/*';`,
+  },
+  postcss: {
+    plugins: [require("autoprefixer")()],
+  },
+};
 
 export default {
   input: "src/index.ts",
@@ -50,33 +65,33 @@ export default {
       emitCss: true,
       preprocess: sveltePreprocess({ sourceMap: !production }),
       compilerOptions: {
-        // enable run-time checks when not in production
         dev: !production,
       },
     }),
 
     scss({
+      importer: tildeImporter,
       output: `./public/build/bundle.css`,
       outputStyle: production ? "compressed" : "compact",
+      watch: "./src/styles",
     }),
-    // css({ output: "bundle.css" }),
 
-    // https://github.com/rollup/plugins/tree/master/packages/commonjs
+    typescript({
+      sourceMap: true,
+      inlineSources: !production
+    }),
+
     resolve({
       browser: true,
       dedupe: ["svelte"],
     }),
     commonjs(),
-    typescript({
-      sourceMap: true,
-      inlineSources: !production,
-    }),
 
     !production && serve(),
 
     !production && livereload("public"),
 
-    production && terser({ output: { comments: false } }),
+    production && terser({ sourcemap: isDev, output: { comments: false } }),
   ],
   watch: {
     clearScreen: false,

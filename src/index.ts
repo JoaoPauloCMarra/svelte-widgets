@@ -1,39 +1,38 @@
-import App from './App.svelte'
+import './styles/global.scss';
 
-import './styles/global.scss'
+import App from './App.svelte';
 
-const initiate = (props: WidgetParams) => {
-  const { id, token } = props
-  const rootEl = document.getElementById(id)
+const renderWidget = ({ id, ...props }: WidgetParams) => {
+  const rootEl = document.getElementById(id);
 
   if (!rootEl) {
-    console.error('Error: ', `element with id '${id}' not found`)
-    return
+    console.error('Error: ', `element with id '${id}' not found`);
+    return;
   }
+
+  const { token, widget, language } = props;
 
   new App({
     target: rootEl,
-    props,
-  })
+    props: {
+      rootEl,
+      token,
+      widget,
+      language,
+    },
+  });
+};
 
-  let theme = 'theme-default'
-  switch (token) {
-    case 'demotoken1':
-      theme = 'theme1'
-      break
-    case 'demotoken2':
-      theme = 'theme2'
-      break
-    case 'demotoken3':
-      theme = 'theme3'
-      break
-    default:
-      break
+const initiate = (params: WidgetParams | WidgetParams[]) => {
+  if (Array.isArray(params)) {
+    params.forEach((item): void => {
+      void renderWidget(item);
+    });
+  } else {
+    void renderWidget(params);
   }
+};
 
-  rootEl.className = `svelte-widgets ${theme}`
-}
+window.SvelteWidgets = { initiate };
 
-window.SvelteWidgets = { initiate }
-
-export default {}
+export default {};

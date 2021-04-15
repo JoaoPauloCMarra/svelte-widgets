@@ -1,0 +1,86 @@
+.svelte-widgets {
+  --bg-color: hsl(0, 0%, 20%);
+  --text-color: hsl(0, 0%, 100%);
+  --error-color: hsl(0, 100%, 70%);
+}
+
+.svelte-widgets.theme1 {
+  --primary-color: hsl(43, 74%, 66%);
+
+  --bg-color: hsl(197, 37%, 24%);
+  --bg-secondary-color: hsl(173, 58%, 39%);
+
+  --gradient-start-color: hsl(197, 37%, 24%);
+  --gradient-end-color: hsl(173, 58%, 39%);
+  --gradient-degree: 90deg;
+
+  --text-color: hsl(0, 0%, 100%);
+  --title-color: hsl(0, 0%, 100%);
+  --subtitle-color: hsl(0, 0%, 53%);
+
+  --button-bg-color: hsl(43, 74%, 66%);
+  --button-hover-bg-color: hsl(27, 87%, 67%);
+  --button-text-color: hsl(0, 0%, 100%);
+
+  --alerts-icon-color: hsl(0, 0%, 53%);
+
+  --modal-bg-color: hsl(0, 0%, 100%);
+  --modal-title-color: hsl(0, 0%, 7%);
+  --modal-text-color: hsl(0, 0%, 27%);
+
+  --scoreboard-text-color: hsl(0, 0%, 100%);
+}
+
+.svelte-widgets.theme2 {
+  --primary-color: hsl(32, 65%, 62%);
+
+  --bg-color: hsl(74, 32%, 32%);
+  --bg-secondary-color: hsl(88, 38%, 15%);
+
+  --gradient-start-color: hsl(74, 32%, 32%);
+  --gradient-end-color: hsl(88, 38%, 15%);
+  --gradient-degree: 90deg;
+
+  --text-color: hsl(0, 0%, 100%);
+  --title-color: hsl(0, 0%, 100%);
+  --subtitle-color: hsl(0, 0%, 53%);
+
+  --button-bg-color: hsl(32, 65%, 62%);
+  --button-hover-bg-color: hsl(28, 67%, 44%);
+  --button-text-color: hsl(0, 0%, 100%);
+
+  --alerts-icon-color: hsl(0, 0%, 40%);
+
+  --modal-bg-color: hsl(0, 0%, 100%);
+  --modal-title-color: hsl(0, 0%, 7%);
+  --modal-text-color: hsl(0, 0%, 27%);
+
+  --scoreboard-text-color: hsl(0, 0%, 100%);
+}
+
+.svelte-widgets.theme3 {
+  --primary-color: hsl(190, 74%, 59%);
+
+  --bg-color: hsl(239, 94%, 19%);
+  --bg-secondary-color: hsl(214, 97%, 27%);
+
+  --gradient-start-color: hsl(239, 94%, 19%);
+  --gradient-end-color: hsl(214, 97%, 27%);
+  --gradient-degree: 90deg;
+
+  --text-color: hsl(0, 0%, 100%);
+  --title-color: hsl(0, 0%, 0%);
+  --subtitle-color: hsl(0, 0%, 53%);
+
+  --button-bg-color: hsl(189, 75%, 75%);
+  --button-hover-bg-color: hsl(190, 77%, 88%);
+  --button-text-color: hsl(0, 0%, 100%);
+
+  --alerts-icon-color: hsl(0, 0%, 40%);
+
+  --modal-bg-color: hsl(0, 0%, 100%);
+  --modal-title-color: hsl(0, 0%, 7%);
+  --modal-text-color: hsl(0, 0%, 27%);
+
+  --scoreboard-text-color: hsl(0, 0%, 0%);
+}
